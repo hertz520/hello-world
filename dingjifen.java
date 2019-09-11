@@ -6,39 +6,39 @@ public class dingjifen {
         Scanner input = new Scanner(System.in);
  
  
-            // ÌáÊ¾ÓÃ»§ÊäÈë»ı·ÖÉÏÏÂÏŞ
-            System.out.println("ÇëÊäÈë»ı·ÖÉÏÏÂÏŞ£º");
+            // æç¤ºç”¨æˆ·è¾“å…¥ç§¯åˆ†ä¸Šä¸‹é™
+            System.out.println("è¯·è¾“å…¥ç§¯åˆ†ä¸Šä¸‹é™ï¼š");
  
-            // ¶¨Òå»ı·ÖÉÏÏÂÏŞa,b,ÓĞ¿ØÖÆÌ¨ÊäÈë
+            // å®šä¹‰ç§¯åˆ†ä¸Šä¸‹é™a,b,æœ‰æ§åˆ¶å°è¾“å…¥
             double a = input.nextDouble();
             double b = input.nextDouble();
  
             double sum = 0;
-            // Çó³öÇø¼ä²î£¬·Ö³É10000¸öÇø¼ä£¬Çø¼äÔ½Ğ¡£¬Îó²îÔ½Ğ¡
+            // æ±‚å‡ºåŒºé—´å·®ï¼Œåˆ†æˆ10000ä¸ªåŒºé—´ï¼ŒåŒºé—´è¶Šå°ï¼Œè¯¯å·®è¶Šå°
             double e = cha(a, b, 10000.0);
  
-            // ÇóºÍ£¬Ñ­»·´ÓµÚÒ»¸öÇø¼äµş¼Óµ½µÚ10000¸ö
+            // æ±‚å’Œï¼Œå¾ªç¯ä»ç¬¬ä¸€ä¸ªåŒºé—´å åŠ åˆ°ç¬¬10000ä¸ª
             for (int j = 1; j <= 10000; j++) {
                 double x = zhongjian(a, b, 10000.0, j);
                 sum = sum + f(x);
  
             }
-            System.out.print("f(x)=2*x*x+xµÄ¶¨»ı·Ö£º");
+            System.out.print("sinxçš„å®šç§¯åˆ†ï¼š");
             System.out.println(sum * e);
  
         }
  
-    // ¶¨Òå±»»ıº¯Êı£¬¿ÉÒÔĞŞ¸Ä
+    // å®šä¹‰è¢«ç§¯å‡½æ•°ï¼Œå¯ä»¥ä¿®æ”¹
     public static double f(double x) {
-        return 2*x*x+x;
+        return Math.sin(x);
     }
  
-    // ¶¨ÒåµÚi¸öÇø¼äµÄÖĞµãÖµ£¬¼´¶¨Òå»ı·Ö±äÁ¿
+    // å®šä¹‰ç¬¬iä¸ªåŒºé—´çš„ä¸­ç‚¹å€¼ï¼Œå³å®šä¹‰ç§¯åˆ†å˜é‡
     public static double zhongjian(double a, double b, double n, int i) {
         return a + i * (b - a) / n;
     }
  
-    // ¶¨ÒåÃ¿¸öĞ¡Çø¼äµÄ¼ä¸ô²î£¬¼´½«·¶Î§·Ö³Én¸öµÈÇø¼ä
+    // å®šä¹‰æ¯ä¸ªå°åŒºé—´çš„é—´éš”å·®ï¼Œå³å°†èŒƒå›´åˆ†æˆnä¸ªç­‰åŒºé—´
     public static double cha(double a, double b, double n) {
         return (b - a) / n;
     }
